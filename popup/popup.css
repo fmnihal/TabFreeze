@@ -280,8 +280,20 @@ body {
   background: #5568d3;
 }
 
-.tab-item.discarded {
+/* .tab-item.discarded {
   opacity: 0.6;
+} */
+ /* Visual cue for a discarded (suspended) tab within the extension popup */
+.tab-item.discarded {
+    opacity: 0.6; /* Dim the item slightly */
+    border-left: 5px solid #ff9900; /* Use a distinct amber/orange border */
+    transition: opacity 0.3s, border-left-color 0.3s; /* Smooth transition */
+}
+/* Gray out the title and URL for a clearer 'sleeping' state */
+.tab-item.discarded .tab-title,
+.tab-item.discarded .tab-url {
+    font-style: italic;
+    color: #888; 
 }
 
 .tab-item.discarded .tab-btn {
