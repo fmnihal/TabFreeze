@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 10px;
 }
 
 /* Header */
@@ -25,6 +26,7 @@ body {
   color: white;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
 }
 
 .header h1 {
@@ -39,10 +41,10 @@ body {
 
 /* System Overview */
 .system-overview {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 10px;
   padding: 15px;
+  margin-bottom: 20px;
   background: white;
   border-bottom: 1px solid #e1e8ed;
 }
@@ -55,7 +57,8 @@ body {
 
 .chart-section h3 {
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   color: #2c3e50;
 }
 
@@ -63,25 +66,51 @@ body {
   max-height: 150px;
 }
 
-.stat-card {
+/* .stat-card {
   text-align: center;
   padding: 10px;
   background: #f8f9fa;
   border-radius: 8px;
+} */
+ .stat-card {
+    flex: 1; /* Makes each card take up equal space */
+    min-width: 0; /* Ensures proper scaling on small screens */
+    /* Enhance appearance */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
 }
 
-.stat-label {
+/* .stat-label {
   font-size: 11px;
   color: #6c757d;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+} */
+ /* 2. Reducing Blank Vertical Space (Shrink card content and margin) */
+.stat-label {
+    font-size: 0.75rem; /* Smaller label text */
+    color: #666;
+    margin-bottom: 5px; /* Reduced space below label */
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
-.stat-value {
+/* .stat-value {
   font-size: 18px;
   font-weight: 700;
   color: #2c3e50;
+} */
+.stat-value {
+    font-size: 1.5rem; /* Ensure the main number is clear */
+    font-weight: 600;
+    color: #333;
+    /* Remove any unnecessary top/bottom padding/margin that might be inherited */
+    margin: 0;
+    padding: 0;
 }
 
 /* Actions */
@@ -153,7 +182,7 @@ body {
 .sort-options label {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   cursor: pointer;
 }
 
