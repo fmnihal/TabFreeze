@@ -143,8 +143,7 @@ function renderTabList(data) {
     
     // This warning clarifies why sorting doesn't appear to work.
     if (allMemoryZero) {
-        warningDiv.textContent = 
-            "⚠️ Tab memory/CPU data unavailable. Suspend feature is fully functional.";
+        // warningDiv.textContent = "⚠️ Tab memory/CPU data unavailable. Suspend feature is fully functional.";
     } else {
         warningDiv.textContent = "";
     }
@@ -191,17 +190,18 @@ function createTabItem(tab) {
                 <div class="tab-title">${escapeHtml(title)}</div>
                 <div class="tab-url">${escapeHtml(url)}</div>
             </div>
-            <div class="tab-stats">
-                <div class="tab-memory" style="color: ${getMemoryColor(tab.memory)}">
-                    ${memoryDisplay}
-                </div>
-                <div class="tab-cpu">CPU: ${cpuDisplay}</div>
-            </div>
+            
             <div class="tab-actions">
                 <button class="${actionClass}" data-tab-id="${tab.id}">${buttonText}</button>
             </div>
         </div>
     `;
+    // <div class="tab-stats">
+    //             <div class="tab-memory" style="color: ${getMemoryColor(tab.memory)}">
+    //                 ${memoryDisplay}
+    //             </div>
+    //             <div class="tab-cpu">CPU: ${cpuDisplay}</div>
+    //         </div>
 }
 
 async function suspendTab(tabId, button) {

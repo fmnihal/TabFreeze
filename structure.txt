@@ -1,5 +1,8 @@
 browser-performance-monitor/
 ├── manifest.json
+├── options.html
+├── options.js
+├── structure.txt
 ├── popup/
 │   ├── popup.html
 │   ├── popup.css
